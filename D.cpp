@@ -2,8 +2,6 @@
 
 using namespace std;
 
-
-
 int main(void){
     int n, x, to, A[26], B[26][2], ended=0;
     cin >> n;
@@ -36,8 +34,9 @@ int main(void){
             }
         }
     }
+    
     if(ended==1) return 0;
-
+    
     vector <string> conComp;
     for(int i=0; i<26; i++){
         if(B[i][1]==1){
@@ -57,13 +56,13 @@ int main(void){
                         aux.push_back(ind+'a');
                         A[aux1]=50;
                     }
-
                 }
                 A[ind]=50;
                 conComp.push_back(aux);
             }
         }
     }
+    
     for(int i=0; i<26; i++){
         if(B[i][1]==1 && A[i]!=50){
             cout << "NO\n";
@@ -75,10 +74,13 @@ int main(void){
         cout << "NO\n";
         return 0;
     }
+    
     sort(conComp.begin(), conComp.end());
+    
     for(int i=0; i<conComp.size(); i++){
         cout<< conComp[i];
     }
+    
     cout << "\n";
 
     return 0;
